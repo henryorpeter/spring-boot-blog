@@ -1,0 +1,12 @@
+body{
+    background: url("../images/giftly.png") !important;
+}
+/* 外边距 */
+.in-container-small{
+    max-width: 80em !important;
+    margin: auto !important;
+}
+.in-yinying{
+    -webkit-box-shadom:0 6px 10px rgba(0, 0, 0, 0.7) !important;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7) !important;
+}
