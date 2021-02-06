@@ -11,8 +11,8 @@ public class IndexContreller {
         return "index";
     }
 
-    @GetMapping("/blogs")
+    @GetMapping("/blog")
     public String blogs() {
-        return "blogs";
+        return "blog";
     }
 }

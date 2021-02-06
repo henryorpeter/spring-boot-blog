@@ -17,11 +17,16 @@
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item">JJBlog</h2>
-            <a href="index.html" class="item in-item in-mobile-hide" th:classppend="${n==1} ? 'active'"><i class="home icon"></i>首页</a>
-            <a href="templates/types.html" class="item in-item in-mobile-hide" th:classppend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
-            <a href="templates/tages.html" class="item in-item in-mobile-hide" th:classppend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
-            <a href="templates/archives.html" class="item in-item in-mobile-hide" th:classppend="${n==4} ? 'active'"><i class="paste icon"></i>归档</a>
-            <a href="templates/aboutme.html" class="item in-item in-mobile-hide" th:classppend="${n==5} ? 'active'"><i class="info icon"></i>关于我</a>
+            <a href="index.html" class="item in-item in-mobile-hide" th:classppend="${n==1} ? 'active'"><i
+                    class="home icon"></i>首页</a>
+            <a href="types.html" class="item in-item in-mobile-hide" th:classppend="${n==2} ? 'active'"><i
+                    class="idea icon"></i>分类</a>
+            <a href="tages.html" class="item in-item in-mobile-hide" th:classppend="${n==3} ? 'active'"><i
+                    class="tags icon"></i>标签</a>
+            <a href="archives.html" class="item in-item in-mobile-hide" th:classppend="${n==4} ? 'active'"><i
+                    class="paste icon"></i>归档</a>
+            <a href="aboutme.html" class="item in-item in-mobile-hide" th:classppend="${n==5} ? 'active'"><i
+                    class="info icon"></i>关于我</a>
             <div class="right item in-item in-mobile-hide">
                 <div class="ui icon inverted transparent input">
                     <input type="text" placeholder="search..">
@@ -43,7 +48,8 @@
             <div class="three wide column">
                 <div class="ui inverted link list">
                     <div class="item">
-                        <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" class="ui rounded image" alt=""
+                        <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" class="ui rounded image"
+                             alt=""
                              style="width: 110px; height: 110px;">
                     </div>
                 </div>
@@ -79,14 +85,16 @@
 </footer>
 
 
-<th:block th:fragment="script"><script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
     <script type="text/javascript" color="100,255,100" pointColor="0,255,0" opacity='10' zIndex="-2" count="250"
             src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
     <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
     <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
     <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
-    <script src="../static/lib/waypoint/jquery.waypoints.min.js" th:src="@{/lib/waypoint/jquery.waypoints.min.js}"></script>
+    <script src="../static/lib/waypoint/jquery.waypoints.min.js"
+            th:src="@{/lib/waypoint/jquery.waypoints.min.js}"></script>
 </th:block>
 </body>
 </html>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
     <link rel="stylesheet" href="../../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
     <link rel="stylesheet" href="../../static/css/index.css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
 
 </head>
 <body>
@@ -17,15 +18,19 @@
 <nav th:fragment="menu(n)" class="ui inverted attached segment in-pading in-shawdom">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
-            <h2 class="ui teal header item">博客管理</h2>
-            <a href="./index.html" th:href="@{/admin/blog_admin}" class="item in-item in-mobile-hide" th:classppend="${n==1} ? 'active'"><i class="home icon"></i>博客</a>
-            <a href="./types.html" th:href="@{/admin/types}" class="item in-item in-mobile-hide" th:classppend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
-            <a href="./tages.html" th:href="@{/admin/tags}" class="item in-item in-mobile-hide" th:classppend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
+            <h2 class="ui teal header item">后台管理</h2>
+            <a href="./index.html" th:href="@{/admin/blogs}" class="item in-item in-mobile-hide"
+               th:classppend="${n==1} ? 'active'"><i class="home icon"></i>博客</a>
+            <a href="./types.html" th:href="@{/admin/types}" class="item in-item in-mobile-hide"
+               th:classppend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
+            <a href="./tags.html" th:href="@{/admin/tags}" class="item in-item in-mobile-hide"
+               th:classppend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
             <div class="right menu in-item in-mobile-hide">
                 <div class="ui dropdown item">
                     <div class="text">
-                        <img class="ui avatar image" src="https://unsplash.it/100/100?image=1001">
-                        杨金静
+                        <img class="ui avatar image" src="https://unsplash.it/100/100?image=1001"
+                             th:src="${session.user.avatar}">
+                        <span th:text="${session.user.nickname}">杨金静</span>
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
@@ -48,7 +53,8 @@
             <div class="three wide column">
                 <div class="ui inverted link list">
                     <div class="item">
-                        <img src="../../static/images/wechat.png" th:src="@{/images/wechat.png}" class="ui rounded image" alt=""
+                        <img src="../../static/images/wechat.png" th:src="@{/images/wechat.png}"
+                             class="ui rounded image" alt=""
                              style="width: 110px; height: 110px;">
                     </div>
                 </div>
@@ -92,7 +98,10 @@
     <script src="../../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
     <script src="../../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
     <script src="../../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
-    <script src="../../static/lib/waypoint/jquery.waypoints.min.js" th:src="@{/lib/waypoint/jquery.waypoints.min.js}"></script>
+    <script src="../../static/lib/editormd/editormd.min.js"
+            th:src="@{/lib/editormd/editormd.min.js}"></script>
+    <script src="../../static/lib/waypoint/jquery.waypoints.min.js"
+            th:src="@{/lib/waypoint/jquery.waypoints.min.js}"></script>
     <script>
         $('.menu.toggle').click(function () {
             $('.in-item').toggleClass('in-mobile-hide');

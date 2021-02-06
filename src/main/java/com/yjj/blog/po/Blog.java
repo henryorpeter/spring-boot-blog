@@ -17,48 +17,83 @@ public class Blog {
     @GeneratedValue
     /**主键**/
     private Long id;
-    /**标题**/
+    /**
+     * 标题
+     **/
     private String title;
-    /**内容**/
+    /**
+     * 内容
+     **/
     private String content;
-    /**首张图**/
+    /**
+     * 首张图
+     **/
     private String firstPicture;
-    /**标记**/
+    /**
+     * 标记
+     **/
     private String flag;
-    /**浏览次数**/
-    private String views;
-    /**悬赏是否开启。。。**/
+    /**
+     * 浏览次数
+     **/
+    private Integer views;
+    /**
+     * 悬赏是否开启。。。
+     **/
     private boolean openAppreciation;
-    /**版权**/
+    /**
+     * 版权
+     **/
     private boolean share;
-    /**评论**/
+    /**
+     * 评论
+     **/
     private boolean comment;
-    /**发布**/
+    /**
+     * 发布
+     **/
     private boolean published;
-    /**是否推荐**/
+    /**
+     * 是否推荐
+     **/
     private boolean recommend;
-    /**创建时间**/
+    /**
+     * 创建时间
+     **/
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
-    /**结束时间**/
+    /**
+     * 结束时间
+     **/
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 
-    /**维护端多对一**/
+    /**
+     * 维护端多对一
+     **/
     @ManyToOne
     private Type type;
 
-    /**多对多**/
+    /**
+     * 多对多
+     **/
     @ManyToMany(cascade = {CascadeType.PERSIST})
     private List<Tag> tags = new ArrayList<>();
 
-    /**多对一**/
+    /**
+     * 多对一
+     **/
     @ManyToOne
     private User user;
 
-    /**一对多**/
+    /**
+     * 一对多
+     **/
     @OneToMany(mappedBy = "blog")
     private List<Comment> comments = new ArrayList<>();
+
+    @Transient
+    private String tagIds;
 
     public Blog() {
     }
@@ -103,11 +138,11 @@ public class Blog {
         this.flag = flag;
     }
 
-    public String getViews() {
+    public Integer getViews() {
         return views;
     }
 
-    public void setViews(String views) {
+    public void setViews(Integer views) {
         this.views = views;
     }
 
@@ -198,6 +233,38 @@ public class Blog {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
+    public String getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(String tagIds) {
+        this.tagIds = tagIds;
+    }
+
+    public void init() {
+        this.tagIds = tagsToIds(this.getTags());
+    }
+
+    //1,2,3
+    private String tagsToIds(List<Tag> tags) {
+        if (!tags.isEmpty()) {
+            StringBuffer ids = new StringBuffer();
+            boolean flag = false;
+            for (Tag tag : tags) {
+                if (flag) {
+                    ids.append(",");
+                } else {
+                    flag = true;
+                }
+                ids.append(tag.getId());
+            }
+            return ids.toString();
+        } else {
+            return tagIds;
+        }
+    }
+
 
     @Override
     public String toString() {
