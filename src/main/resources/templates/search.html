@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head th:replace="fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分类</title>
+    <title>搜索结果</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
-    <link rel="stylesheet" href="../static/css/blogs.css">
-    <link rel="stylesheet" href="../../static/static/css/typo.css">
-    <link rel="stylesheet" href="../static/lib/prism/prism.css">
-    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
+    <link rel="stylesheet" href="../static/css/index.css">
 </head>
-<body>
 
 <!-- 导航 -->
-<nav th:replace="fragments :: menu(2)" class="ui inverted attached segment in-pading in-shawdom">
+<nav th:replace="fragments :: menu(1)" class="ui inverted attached segment in-pading in-shawdom">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item">JJBlog</h2>
             <a href="index.html" class="item in-item in-mobile-hide"><i class="home icon"></i>首页</a>
-            <a href="types.html" class="active item in-item in-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="types.html" class="item in-item in-mobile-hide"><i class="idea icon"></i>分类</a>
             <a href="tages.html" class="item in-item in-mobile-hide"><i class="tags icon"></i>标签</a>
             <a href="archives.html" class="item in-item in-mobile-hide"><i class="paste icon"></i>归档</a>
             <a href="aboutme.html" class="item in-item in-mobile-hide"><i class="info icon"></i>关于我</a>
@@ -35,32 +32,29 @@
     </a>
 </nav>
 
-<!-- 中间部分 -->
-<div class="in-container-small in-pading-big">
-    <!-- 头部 -->
+<!--中间内容-->
+<div class="in-container in-pading-big">
     <div class="ui container">
+        <!--中间内容header-->
         <div class="ui top attached segment">
             <div class="ui two column grid middle aligned">
                 <div class="column">
-                    <h3 class="ui teal header" style="font-weight: 600;">分类</h3>
+                    <h3 class="ui teal header" style="font-weight: 600;">博客</h3>
                 </div>
                 <div class="column right aligned">
-                    <strong>共 <h2 class="ui orange header in-text-thin" style="display: inline-block;" th:text="${#arrays.length(types)}">14</h2>个</strong>
+                    <strong>共 <h2 class="ui orange header in-text-thin" style="display: inline-block;"
+                                  th:text="${page.totalElements}">
+                        14</h2>篇</strong>
                 </div>
             </div>
         </div>
-        <div class="ui attached segment">
-            <div class="ui labeled button in-margin" th:each="type : ${types}">
-                <a href="#" class="ui basic button"  th:href="@{/types/{id}(id=${type.id})}" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${type.name}">思考与感悟</a>
-                <div class="ui basic left pointing label" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}">25</div>
-            </div>
-        </div>
+
 
         <div class="ui top attached teal segment">
             <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
                 <div class="ui middle aligned mobile reversed stackable grid">
                     <div class="eleven wide column">
-                        <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}"
+                        <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank"
                                                  class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
                         <p class="m-text" th:text="|${blog.description}......|">
                             正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
@@ -83,14 +77,14 @@
                                 </div>
                             </div>
                             <div class="right aligned five wide column">
-                                <a href="#" class="ui teal basic label m-padded-tiny m-text-thin"
+                                <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin"
                                    th:text="${blog.type.name}">认知升级</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="five wide column">
-                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}">
+                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
                             <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}"
                                  style="width: 200px; height: 120px;" alt=""
                                  class="ui rounded image">
@@ -100,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <!-- 分页 -->
+
         <!--footer-->
         <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
             <div class="ui middle aligned two column grid">
@@ -114,61 +108,57 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
-</div>
-<!-- 底部 -->
-<footer th:replace="fragments :: footer" class="ui inverted vertical segment in-pading-max in-bgak">
+<br>
+<br>
+<!--底部footer-->
+<footer th:replace="fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="three wide column">
                 <div class="ui inverted link list">
                     <div class="item">
-                        <img src="../static/images/wechat.png" class="ui rounded image" alt=""
-                             style="width: 110px; height: 110px;">
+                        <img src="../static/images/wechat.jpg" class="ui rounded image" alt="" style="width: 110px">
                     </div>
                 </div>
             </div>
             <div class="three wide column">
-                <h4 class="ui inverted header in-text-thin in-text-spaced">最新博客</h4>
+                <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
                 <div class="ui inverted link list">
-                    <a href="#" class="item">用户故事（user story）</a>
-                    <a href="#" class="item">用户故事（user story）</a>
-                    <a href="#" class="item">用户故事（user story）</a>
+                    <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                    <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                    <a href="#" class="item m-text-thin">用户故事（User Story）</a>
                 </div>
             </div>
             <div class="three wide column">
-                <h4 class="ui inverted header in-text-thin in-text-spaced">联系我们</h4>
+                <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
                 <div class="ui inverted link list">
-                    <a href="#" class="item">Email: 1561784670@qq.com</a>
-                    <a href="#" class="item">QQ: 1561784670</a>
+                    <a href="#" class="item m-text-thin">Email：1561784670@qq.com</a>
+                    <a href="#" class="item m-text-thin">QQ：1561784670</a>
                 </div>
             </div>
             <div class="seven wide column">
-                <h4 class="ui inverted header in-text-thin in-text-spaced">Blog简介</h4>
-                <p class="in-text-thin in-text-spaced in-opactity-min">
-                    ................................................</p>
-                </p>
+                <h4 class="ui inverted header m-text-thin m-text-spaced ">Blog</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
             </div>
         </div>
-        <div class="ui inverted section divider">
-            <p class="in-text-thin in-text-spaced in-opactity-mins">................................................
-            </p>
-        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-tiny"> © 2019 - 2019 Designed by 大靖</p>
     </div>
+
 </footer>
-<!--/*/<th:block th:replace="fragments :: script">/*/-->
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
-<!--/*/</th:block>/*/-->
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
 
 <script>
     $('.menu.toggle').click(function () {
-        $('.in-item').toggleClass('in-mobile-hide');
+        $('.m-item').toggleClass('in-mobile-hide');
     });
 
 </script>
 </body>
-
 </html>

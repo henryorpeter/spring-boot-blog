@@ -1,9 +1,6 @@
 package com.yjj.blog.po;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +11,8 @@ import java.util.List;
  * \* Date: 2020/10/15
  * \* Time: 19:25
  */
-@Entity(name = "jj_type")
+@Entity
+@Table(name = "jj_type")
 public class Type {
 
     @Id

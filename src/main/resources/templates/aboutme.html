@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我</title>
@@ -12,7 +12,7 @@
 <body>
 
     <!-- 导航 -->
-    <nav class="ui inverted attached segment in-pading in-shawdom">
+    <nav th:replace="fragments :: menu(5)" class="ui inverted attached segment in-pading in-shawdom">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">JJBlog</h2>
@@ -66,12 +66,8 @@
                         <div class="ui teal basic left pointing label in-margin-top-p">vue.js</div>
                     </div>
                     <div class="ui bottom attached segment">
-                        <a href="https://github.com/" class="ui circular icon button"><i class="github icon"></i></a>
-                        <a href="#" class="ui weixin circular icon button"><i class="weixin icon"></i></a>
+                        <a href="https://github.com/" class="ui git circular icon button " data-content="henryorpeter" data-position="bottom center"><i class="github icon"></i></a>
                         <a href="#" class="ui qq circular icon button" data-content="1561784670" data-position="bottom center"><i class="qq icon"></i></a>
-                    </div>
-                    <div class="ui wechat payq flowing popup transition hidden">
-                        <img src="../static/images/wechat.png" alt="" class="ui rounded image" style="width: 115px;">
                     </div>
                 </div>
             </div>
@@ -80,7 +76,7 @@
 
     </div>
     <!-- 底部 -->
-    <footer class="ui inverted vertical segment in-pading-max in-bgak">
+    <footer th:replace="fragments :: footer" class="ui inverted vertical segment in-pading-max in-bgak">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
@@ -93,10 +89,10 @@
                 </div>
                 <div class="three wide column">
                     <h4 class="ui inverted header in-text-thin in-text-spaced">最新博客</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">用户故事（user story）</a>
-                        <a href="#" class="item">用户故事（user story）</a>
-                        <a href="#" class="item">用户故事（user story）</a>
+                    <div id="newblog-container">
+                        <div class="ui inverted link list" th:fragment="newlogList">
+                            <a href="#" th:hrfe="@{/blog/{id}(id=={$blog.id})}" class="item" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事（user story）</a>
+                        </div>
                     </div>
                 </div>
                 <div class="three wide column">
@@ -119,18 +115,16 @@
             </div>
         </div>
     </footer>
+    <!--/*/<th:block th:replace="fragments :: script">/*/-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
-    <script type= "text/javascript" color="100,255,100" pointColor="0,255,0" opacity='10' zIndex="-2" count="250" src= "https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js" ></script>
+    <!--/*/</th:block>/*/-->
     <script>
         $('.menu.toggle').click(function () {
             $('.in-item').toggleClass('in-mobile-hide');
         });
         $('.qq').popup();
-        $('.weixin').popup({
-            popup: $('.wechat'),
-            position: 'bottom center'
-        });
+        $('.git').popup();
     </script>
 </body>
 

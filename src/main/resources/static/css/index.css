@@ -62,7 +62,9 @@ body{
 .in-text-color{
     color: #333 !important;
 }
-
+.m-teal {
+    color: #00B5AD !important;
+}
 /* 外边距 */
 .in-container{
     max-width: 75em !important;

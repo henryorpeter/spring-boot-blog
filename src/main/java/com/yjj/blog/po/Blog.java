@@ -11,7 +11,8 @@ import java.util.List;
  * \* Date: 2020/10/14
  * \* Time: 18:29
  */
-@Entity(name = "jj_blog")
+@Entity
+@Table(name = "jj_blog")
 public class Blog {
     @Id
     @GeneratedValue
@@ -94,6 +95,8 @@ public class Blog {
 
     @Transient
     private String tagIds;
+
+    private String description;
 
     public Blog() {
     }
@@ -246,6 +249,14 @@ public class Blog {
         this.tagIds = tagsToIds(this.getTags());
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     //1,2,3
     private String tagsToIds(List<Tag> tags) {
         if (!tags.isEmpty()) {
@@ -282,6 +293,8 @@ public class Blog {
                 ", recommend=" + recommend +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", tagIds='" + tagIds + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

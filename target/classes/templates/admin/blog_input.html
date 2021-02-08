@@ -108,6 +108,9 @@
                         <input type="text" name="firstPicture" placeholder="首图引用地址" th:value="*{firstPicture}">
                     </div>
                 </div>
+                <div class="required field">
+                    <textarea name="description" th:text="*{description}" placeholder="博客描述..." maxlength="200"></textarea>
+                </div>
                 <div class="inline fields">
                     <div class="field">
                         <div class="ui checkbox">
@@ -268,6 +271,13 @@
                         }
                     ]
                 },
+                description : {
+                    identifier: 'description',
+                    rules: [{
+                        type : 'empty',
+                        prompt: '标题：请输入博客描述'
+                    }]
+                }
             }
         });
     </script>

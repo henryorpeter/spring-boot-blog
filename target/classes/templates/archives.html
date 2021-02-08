@@ -1,122 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>归档</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
     <link rel="stylesheet" href="../static/css/blogs.css">
+    <link rel="stylesheet" href="../../static/static/css/typo.css">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
 </head>
-
 <body>
 
-    <!-- 导航 -->
-    <nav class="ui inverted attached segment in-pading in-shawdom">
-        <div class="ui container">
-            <div class="ui inverted secondary stackable menu">
-                <h2 class="ui teal header item">JJBlog</h2>
-                <a href="index.html" class="item in-item in-mobile-hide"><i class="home icon"></i>首页</a>
-                <a href="types.html" class="item in-item in-mobile-hide"><i class="idea icon"></i>分类</a>
-                <a href="tages.html" class="item in-item in-mobile-hide"><i class="tags icon"></i>标签</a>
-                <a href="archives.html" class="active item in-item in-mobile-hide"><i class="paste icon"></i>归档</a>
-                <a href="aboutme.html" class="item in-item in-mobile-hide"><i class="info icon"></i>关于我</a>
-                <div class="right item in-item in-mobile-hide">
-                    <div class="ui icon inverted transparent input">
-                        <input type="text" placeholder="search..">
-                        <i class="search link icon"></i>
-                    </div>
+<!-- 导航 -->
+<nav th:replace="fragments :: menu(4)" class="ui inverted attached segment in-pading in-shawdom">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">JJBlog</h2>
+            <a href="index.html" class="item in-item in-mobile-hide"><i class="home icon"></i>首页</a>
+            <a href="types.html" class="item in-item in-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="tages.html" class="item in-item in-mobile-hide"><i class="tags icon"></i>标签</a>
+            <a href="archives.html" class="active item in-item in-mobile-hide"><i class="paste icon"></i>归档</a>
+            <a href="aboutme.html" class="item in-item in-mobile-hide"><i class="info icon"></i>关于我</a>
+            <div class="right item in-item in-mobile-hide">
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="search..">
+                    <i class="search link icon"></i>
                 </div>
             </div>
         </div>
-        <a href="#" class="ui menu toggle black icon button in-right-top in-mobile-show">
-            <i class="sidebar icon"></i>
-        </a>
-    </nav>
-    <!-- 中间部分 -->
-    <div class="in-container-small in-pading-big">
-        <!-- 头部 -->
-        <div class="ui container">
-            <div class="ui top attached padded segment">
-                <div class="ui two column grid middle aligned">
-                    <div class="column">
-                        <h3 class="ui teal header" style="font-weight: 600;">归档</h3>
-                    </div>
-                    <div class="column right aligned">
-                        <strong>共 <h2 class="ui orange header in-text-thin" style="display: inline-block;">194</h2>
-                            篇博客</strong>
-                    </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button in-right-top in-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!-- 中间部分 -->
+<div class="in-container-small in-pading-big">
+    <!-- 头部 -->
+    <div class="ui container">
+        <div class="ui top attached padded segment">
+            <div class="ui two column grid middle aligned">
+                <div class="column">
+                    <h3 class="ui teal header" style="font-weight: 600;">归档</h3>
+                </div>
+                <div class="column right aligned">
+                    <strong>共 <h2 class="ui orange header in-text-thin" style="display: inline-block;"
+                                  th:text="${blogCount}">194</h2>
+                        篇博客</strong>
                 </div>
             </div>
-            <h3 class="ui header inverted center aligned">2020</h3>
-            <div class="ui fluid vertical menu">
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>关于可以练习的清单
-                        <div class="ui teal basic left pointing label in-pading-mini">10月10号</div>
-                    </span>
-                    <div class="ui orange basic label in-pading-mini">原创</div>
-                </a>
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>关于可以练习的清单
-                        <div class="ui teal basic left pointing label in-pading-mini">10月10号</div>
-                    </span>
-                    <div class="ui orange basic label in-pading-mini">原创</div>
-                </a>
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>关于可以练习的清单
-                        <div class="ui teal basic left pointing label in-pading-mini">10月10号</div>
-                    </span>
-                    <div class="ui orange basic label in-pading-mini">原创</div>
-                </a>
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>关于可以练习的清单
-                        <div class="ui teal basic left pointing label in-pading-mini">10月10号</div>
-                    </span>
-                    <div class="ui orange basic label in-pading-mini">原创</div>
-                </a>
-            </div>
-
-            <h3 class="ui header inverted center aligned">2019</h3>
-            <div class="ui fluid vertical menu">
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>关于可以练习的清单
-                        <div class="ui teal basic left pointing label in-pading-mini">10月10号</div>
-                    </span>
-                    <div class="ui orange basic label in-pading-mini">原创</div>
-                </a>
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>关于可以练习的清单
-                        <div class="ui teal basic left pointing label in-pading-mini">10月10号</div>
-                    </span>
-                    <div class="ui orange basic label in-pading-mini">原创</div>
-                </a>
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>关于可以练习的清单
-                        <div class="ui teal basic left pointing label in-pading-mini">10月10号</div>
-                    </span>
-                    <div class="ui orange basic label in-pading-mini">原创</div>
-                </a>
-                <a href="#" class="item">
-                    <span>
-                        <i class="mini teal circle icon"></i>关于可以练习的清单
-                        <div class="ui teal basic left pointing label in-pading-mini">10月10号</div>
-                    </span>
-                    <div class="ui orange basic label in-pading-mini">原创</div>
-                </a>
-            </div>
         </div>
+        <th:block th:each="item : ${archiveMap}">
+            <h3 class="ui header inverted center aligned" th:text="${item.key}">2020</h3>
+            <div class="ui fluid vertical menu">
+                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" class="item"
+                   th:each="blog : ${item.value}">
+                    <span>
+                        <i class="mini teal circle icon"></i><span th:text="${blog.title}">关于刻意练习的清单</span>
+                        <div class="ui teal basic left pointing label in-pading-mini"
+                             th:text="${#dates.format(blog.updateTime,'MMMdd')}">10月10号</div>
+                    </span>
+                    <div class="ui orange basic label in-pading-mini" th:text="${blog.flag}">原创</div>
+                </a>
+            </div>
+        </th:block>
     </div>
-
-    </div>
+</div>
+<br>
+<br>
+<br>
     <!-- 底部 -->
-    <footer class="ui inverted vertical segment in-pading-max in-bgak">
+    <footer th:replace="fragments :: footer" class="ui inverted vertical segment in-pading-max in-bgak">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
@@ -155,9 +109,10 @@
             </div>
         </div>
     </footer>
+    <!--/*/<th:block th:replace="fragments :: script">/*/-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
-    <script type= "text/javascript" color="100,255,100" pointColor="0,255,0" opacity='10' zIndex="-2" count="250" src= "https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js" ></script>
+    <!--/*/</th:block>/*/-->
     <script>
         $('.menu.toggle').click(function () {
             $('.in-item').toggleClass('in-mobile-hide');
