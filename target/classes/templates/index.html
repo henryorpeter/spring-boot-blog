@@ -14,7 +14,7 @@
 <nav th:replace="fragments :: menu(1)" class="ui inverted attached segment in-pading in-shawdom">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
-            <h2 class="ui teal header item">JJBlog</h2>
+            <h2 class="ui teal header item">ALEXIA</h2>
             <a href="index.html" class="active item in-item in-mobile-hide"><i class="home icon"></i>首页</a>
             <a href="types.html" class="item in-item in-mobile-hide"><i class="idea icon"></i>分类</a>
             <a href="tages.html" class="item in-item in-mobile-hide"><i class="tags icon"></i>标签</a>
@@ -342,7 +342,7 @@
                         <div class="ui secondary segment">
                             <div class="ui two column grid">
                                 <div class="column"><i class="idea icon"></i>分类</div>
-                                <div class="column right aligned"><a href="#">more <i
+                                <div class="column right aligned"><a href="#" th:href="@{types/-1}">more <i
                                         class="angle double right icon"></i></a></div>
                             </div>
                         </div>
@@ -481,7 +481,7 @@
                         <!--*/-->
                         <!-- 我的二维码 -->
                         <h4 class="ui horizontal inverted divider header in-margin-top-k">扫码关注我哟！</h4>
-                        <div class="ui card centered" style="width: 130px; height: 130px;">
+                        <div class="ui card centered" style="width: 135px; height: 135px;">
                             <img src="../static/images/wechat.png" th:src="@{/images/wechat.png}" alt=""
                                  class="ui rounded image">
                         </div>
@@ -539,11 +539,10 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
 <!--/*/</th:block>/*/-->
-<script type="text/javascript" color="100,255,100" pointColor="0,255,0" opacity='10' zIndex="-2" count="250"
-        src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
-　　
-$('.menu.toggle').click(function () {
-$('.in-item').toggleClass('in-mobile-hide');
-});
+<script>
+    $('.menu.toggle').click(function () {
+        $('.in-item').toggleClass('in-mobile-hide');
+    });
+</script>
 </body>
 </html>

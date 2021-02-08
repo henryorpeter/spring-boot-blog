@@ -44,30 +44,43 @@
                 </div>
                 <div class="five wide column">
                     <div class="ui top attached segment">
-                        <div class="ui header">关于我</div>
+                        <div class="ui header"><center>人间理想</center></div>
                     </div>
                     <div class="ui attached segment">
-                        <p class="in-text-thin">我自己的说明</p>
+                        <p class="in-text-thin"><center>Good afternoon and nice to see you at this sunny afternoon.</center></p>
+                        <p class="in-text-thin"><center>欢迎进入我的世界</center></p>
+                        <p class="in-text-thin"><center>我相信「零碎的岛屿终会找到海」</center></p>
+                        <p class="in-text-thin"><center>我喜欢那些闪光的东西，比如冬日的雪花，天上的星星，还有你的眼睛.</center></p>
+                        <p class="in-text-thin"><center>以梦为马，驰骋岁月；以梦为马，诗酒趁年华。</center></p>
+                        <p class="in-text-thin"><center>我喜欢音乐，热爱编程，喜欢发现新技术</center></p>
+                        <p class="in-text-thin"><center>来到这世界上就努力拼搏吧！</center></p>
+                        <p class="in-text-thin"><center>去发光，而不是被照亮</center></p>
+                        <p class="in-text-thin"><center>[我会一直在]</center></p>
                     </div>
                     <div class="ui attached segment">
-                        <div class="ui orange basic left pointing label">JavaScript</div>
+                        <div class="ui orange basic left pointing label">JavaWeb</div>
+                        <div class="ui orange basic left pointing label">Android</div>
                         <div class="ui orange basic left pointing label">编程</div>
                         <div class="ui orange basic left pointing label">开车</div>
                         <div class="ui orange basic left pointing label">运动</div>
+                        <div class="ui orange basic left pointing label">旅行</div>
                     </div>
                     <div class="ui attached segment">
-                        <div class="ui teal basic left pointing label in-margin-top-p">java</div>
-                        <div class="ui teal basic left pointing label in-margin-top-p">JavaScript</div>
+                        <div class="ui teal basic left pointing label in-margin-top-p">Java</div>
+                        <div class="ui teal basic left pointing label in-margin-top-p">Javaweb</div>
                         <div class="ui teal basic left pointing label in-margin-top-p">python</div>
-                        <div class="ui teal basic left pointing label in-margin-top-p">vue.js</div>
-                        <div class="ui teal basic left pointing label in-margin-top-p">JavaScript</div>
-                        <div class="ui teal basic left pointing label in-margin-top-p">java</div>
-                        <div class="ui teal basic left pointing label in-margin-top-p">python</div>
-                        <div class="ui teal basic left pointing label in-margin-top-p">vue.js</div>
+                        <div class="ui teal basic left pointing label in-margin-top-p">Android</div>
+                        <div class="ui teal basic left pointing label in-margin-top-p">IDEA</div>
+                        <div class="ui teal basic left pointing label in-margin-top-p">Github</div>
                     </div>
                     <div class="ui bottom attached segment">
-                        <a href="https://github.com/" class="ui git circular icon button " data-content="henryorpeter" data-position="bottom center"><i class="github icon"></i></a>
+                        <a href="https://github.com/" class="ui git circular icon button " data-content="点击跳转到Github" data-position="bottom center"><i class="github icon"></i></a>
                         <a href="#" class="ui qq circular icon button" data-content="1561784670" data-position="bottom center"><i class="qq icon"></i></a>
+                        <a href="#" class="ui qq circular icon button" data-position="bottom center"><i class="wechat icon"></i></a>
+                    </div>
+                    <div class="ui wechat-qr flowing popup bottom center transition hidden" style="inset: 289.6px auto auto 424.938px;">
+                        <img src="/images/Wechat.png" alt="" class="ui rounded image" style="width: 110px">
+                        <div align="center">微信</div>
                     </div>
                 </div>
             </div>
@@ -105,12 +118,12 @@
                 <div class="seven wide column">
                     <h4 class="ui inverted header in-text-thin in-text-spaced">Blog简介</h4>
                     <p class="in-text-thin in-text-spaced in-opactity-min">
-                        ................................................</p>
+                        欢迎来到我的博客，ɴɪᴄᴇ ᴅᴀʏ︎ ⚪︎今日份︎甜甜碎片已加载完毕⌇，我喜欢在山川河流里摘星子，等待清风几许落入手心里</p>
                     </p>
                 </div>
             </div>
             <div class="ui inverted section divider">
-                <p class="in-text-thin in-text-spaced in-opactity-mins">................................................
+                <p class="in-text-thin in-text-spaced in-opactity-mins"> © 2019 - 2019 Designed by 大靖
                 </p>
             </div>
         </div>
@@ -125,6 +138,11 @@
         });
         $('.qq').popup();
         $('.git').popup();
+        // 显示微信
+        $('.wechat').popup({
+            popup : $('.wechat-qr'),
+            position: 'bottom center'
+        });
     </script>
 </body>
 

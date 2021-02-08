@@ -1,5 +1,9 @@
-body{
-    background-color: rgba(0, 0, 0, 0.822);
+html {
+    height: 100%;width: 100%;margin:0;padding:0;
+}
+body {
+    background: url("../images/bgk.png")no-repeat center top fixed;
+    background-size:100% 100%;
 }
 .in-pading{
     padding-top: 0.2em !important;
@@ -35,7 +39,7 @@ body{
 }
 /* 背景透明度 */
 .in-bgak{
-    opacity: 0.6 !important;
+    opacity: 0.8 !important;
 }
 /* 文本字体 */
 .in-text-thin{
