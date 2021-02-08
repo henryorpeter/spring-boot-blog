@@ -66,8 +66,13 @@
                         <div class="ui teal basic left pointing label in-margin-top-p">vue.js</div>
                     </div>
                     <div class="ui bottom attached segment">
-                        <a href="https://github.com/" class="ui git circular icon button " data-content="henryorpeter" data-position="bottom center"><i class="github icon"></i></a>
+                        <a href="https://github.com/" class="ui git circular icon button " data-content="点击跳转到Github" data-position="bottom center"><i class="github icon"></i></a>
                         <a href="#" class="ui qq circular icon button" data-content="1561784670" data-position="bottom center"><i class="qq icon"></i></a>
+                        <a href="#" class="ui qq circular icon button" data-position="bottom center"><i class="wechat icon"></i></a>
+                    </div>
+                    <div class="ui wechat-qr flowing popup bottom center transition hidden" style="inset: 289.6px auto auto 424.938px;">
+                        <img src="/images/Wechat.png" alt="" class="ui rounded image" style="width: 110px">
+                        <div align="center">微信</div>
                     </div>
                 </div>
             </div>
@@ -105,12 +110,12 @@
                 <div class="seven wide column">
                     <h4 class="ui inverted header in-text-thin in-text-spaced">Blog简介</h4>
                     <p class="in-text-thin in-text-spaced in-opactity-min">
-                        ................................................</p>
+                        欢迎来到我的博客，ɴɪᴄᴇ ᴅᴀʏ︎ ⚪︎今日份︎甜甜碎片已加载完毕⌇，我喜欢在山川河流里摘星子，等待清风几许落入手心里</p>
                     </p>
                 </div>
             </div>
             <div class="ui inverted section divider">
-                <p class="in-text-thin in-text-spaced in-opactity-mins">................................................
+                <p class="in-text-thin in-text-spaced in-opactity-mins"> © 2019 - 2019 Designed by 大靖
                 </p>
             </div>
         </div>
@@ -125,6 +130,11 @@
         });
         $('.qq').popup();
         $('.git').popup();
+        // 显示微信
+        $('.wechat').popup({
+            popup : $('.wechat-qr'),
+            position: 'bottom center'
+        });
     </script>
 </body>
 
