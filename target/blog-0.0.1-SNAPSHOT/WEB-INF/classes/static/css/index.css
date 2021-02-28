@@ -1,0 +1,102 @@
+html {
+    height: 100%;width: 100%;margin:0;padding:0;
+}
+body {
+    background: url("../images/bgk.png")no-repeat center top fixed;
+    background-size:100% 100%;
+}
+.in-pading{
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+.in-pading-mini{
+    padding: 0.3em !important;
+}
+.in-pading-max{
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+.in-pading-huge{
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+.in-pading-big{
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.in-pading-large{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+.in-pading-maxmax{
+    padding-top: 10em !important;
+    padding-bottom: 10em !important;
+}
+/* 阴影 */
+.in-shawdom{
+    -webkit-box-shadom:0 4px 8px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
+}
+/* 背景透明度 */
+.in-bgak{
+    opacity: 0.8 !important;
+}
+/* 文本字体 */
+.in-text-thin{
+    font-weight: 300 !important;
+}
+.in-text-spaced{
+    letter-spacing: 1px !important;
+}
+.in-text-lined{
+    line-height: 1.5;
+}
+.in-opactity-min{
+    opacity: 0.8 !important;
+}
+.in-opactity-mins{
+    opacity: 0.6 !important;
+}
+.in-text{
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.5;
+}
+/* 文字颜色 */
+.in-text-color{
+    color: #333 !important;
+}
+.m-teal {
+    color: #00B5AD !important;
+}
+/* 外边距 */
+.in-container{
+    max-width: 75em !important;
+    margin: auto !important;
+}
+/* in-margin */
+.in-margin{
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+.in-margin-top-k{
+    margin-top: 2em !important;
+}
+/* 按钮绝对定位position */
+.in-right-top{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.in-mobile-show{
+    display: none !important;
+}
+/* 手机端隐藏导航栏 */
+@media screen and (max-width:780px){
+    .in-mobile-hide{
+        display: none !important;
+    }
+    .in-mobile-show{
+        display: block !important;
+    }
+}
